@@ -1,0 +1,209 @@
+/* Base styles */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f0f2f5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    transition: background-color 0.3s ease;
+}
+
+/* Container */
+.todo-container {
+    background: #fff;
+    padding: 2rem;
+    border-radius: 20px;
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+    width: 350px;
+    transition: background-color 0.3s ease;
+}
+
+/* Heading */
+h1 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    color: #333;
+}
+
+/* Inputs and selects */
+input[type="text"],
+input[type="date"],
+select {
+    width: 100%;
+    padding: 0.75rem;
+    margin-bottom: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    font-size: 1rem;
+    transition: all 0.2s ease;
+}
+
+input:focus,
+select:focus {
+    border-color: #28a745;
+    outline: none;
+    box-shadow: 0 0 4px #28a74555;
+}
+
+/* Buttons */
+button {
+    width: 100%;
+    padding: 0.75rem;
+    border: none;
+    background-color: #28a745;
+    color: white;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #5c6eb8;
+}
+
+.dark-toggle-btn {
+    margin-bottom: 1rem;
+    background-color: #333;
+}
+
+body.dark-mode .dark-toggle-btn {
+    background-color: #bbb;
+    color: black;
+}
+
+/* Task List */
+ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.75rem;
+    border-bottom: 1px solid #eee;
+    gap: 0.5rem;
+    flex-wrap: nowrap;
+}
+
+li:hover {
+    background-color: #f9f9f9;
+    border-radius: 8px;
+}
+
+li.completed span {
+    text-decoration: line-through;
+    color: #999;
+}
+
+/* Task text */
+li span {
+    flex: 1;
+    margin-right: 10px;
+    word-break: break-word;
+    white-space: normal;
+}
+
+/* Buttons inside tasks */
+.delete-btn {
+    background: none;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+    padding: 0.35rem 0.6rem;
+    font-size: 1.1rem;
+    border-radius: 6px;
+    transition: transform 0.2s ease, background-color 0.2s ease, color 0.2s ease;
+}
+
+.delete-btn:hover {
+    transform: scale(1.15);
+    background-color: rgba(0, 0, 0, 0.05); /* subtle hover bg */
+}
+
+/* Color variants */
+.delete-btn.red {
+    color: #e63946;
+}
+
+.delete-btn.red:hover {
+    background-color: rgba(230, 57, 70, 0.15);
+    color: #a4161a;
+}
+
+.delete-btn.blue {
+    color: #007bff;
+}
+
+.delete-btn.blue:hover {
+    background-color: rgba(0, 123, 255, 0.15);
+    color: #0056b3;
+}
+
+/* Priority badges */
+.priority-high {
+    color: white;
+    background-color: red;
+    padding: 0.15rem 0.5rem;
+    border-radius: 5px;
+    font-size: 0.8rem;
+    margin-left: 6px;
+}
+
+.priority-medium {
+    color: white;
+    background-color: orange;
+    padding: 0.15rem 0.5rem;
+    border-radius: 5px;
+    font-size: 0.8rem;
+    margin-left: 6px;
+}
+
+.priority-low {
+    color: white;
+    background-color: green;
+    padding: 0.15rem 0.5rem;
+    border-radius: 5px;
+    font-size: 0.8rem;
+    margin-left: 6px;
+}
+
+/* Dark mode */
+body.dark-mode {
+    background-color: #121212;
+    color: #eee;
+}
+
+body.dark-mode .todo-container {
+    background-color: #1e1e1e;
+}
+
+body.dark-mode input,
+body.dark-mode select,
+body.dark-mode button {
+    background-color: #2c2c2c;
+    color: white;
+    border-color: #444;
+}
+
+body.dark-mode li:hover {
+    background-color: #2a2a2a;
+}
+
+body.dark-mode .priority-high {
+    background-color: #ff6b6b;
+}
+
+body.dark-mode .priority-medium {
+    background-color: #f0ad4e;
+}
+
+body.dark-mode .priority-low {
+    background-color: #5cb85c;
+}
